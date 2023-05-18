@@ -1,6 +1,6 @@
 import networkx as nx
-from job import Job
-from job_runner import JobRunner
+from src.ganger.job import Job
+from src.ganger.job_runner import JobRunner
 from typing import List, Dict
 from itertools import tee
 from time import sleep
