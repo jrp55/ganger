@@ -1,6 +1,5 @@
-from job import Job
-from job_tracker import JobTracker
-from job_runner import TestJobRunner
+from src.ganger.job_tracker import JobTracker
+from src.ganger.job_runner import TestJobRunner
 import networkx as nx
 import logging
 import sys
@@ -8,7 +7,7 @@ import sys
 logging.basicConfig(format="%(asctime)s | %(levelname)s | %(module)s | %(message)s", stream=sys.stdout, level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-def main():
+def test_basic_flow():
     graph = nx.digraph.DiGraph()
 
     graph.add_edge("A", "B")
@@ -27,7 +26,4 @@ def main():
 
     job_tracker = JobTracker(TestJobRunner(), graph)
     job_tracker.run_minimal_build(target="Z", changed_projects=["B", "C"])
-
-
-if __name__ == "__main__":
-    main()
+    assert True

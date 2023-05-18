@@ -17,4 +17,16 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
+dependencies = [
+  "alive-progress>3.0",
+  "networkx>3.0",
+]
+
 [project.urls]
+"Homepage" = "https://github.com/jrp55/ganger"
+"Bug Tracker" = "https://github.com/jrp55/ganger/issues"
+
+[tool.pytest.ini_options]
+addopts = [
+  "--import-mode=importlib",
+]
