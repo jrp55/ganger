@@ -65,7 +65,7 @@ class JobTracker:
 
                     elif job_statuses[job] in [JobStatus.Running, JobStatus.NotStarted]:
                         job_status: JobStatus = transform_job_runner_status(self.job_runner.get_job_status(job))
-                        if job_status == JobStatus.Running:
+                        if job_status in [JobStatus.Running, JobStatus.NotStarted]:
                             pass
                         elif job_status == JobStatus.Succeeded:
                             logger.info(f"{job} finished")
